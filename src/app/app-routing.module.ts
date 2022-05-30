@@ -4,19 +4,59 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () =>
+      import('./home/home.module').then((m) => m.HomePageModule),
   },
   {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
+    pathMatch: 'full',
+  },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./login/login.module').then((m) => m.LoginPageModule),
+  },
+  {
+    path: 'movie',
+    loadChildren: () =>
+      import('./movie/movie.module').then((m) => m.MoviePageModule),
+  },
+  {
+    path: 'movielist',
+    loadChildren: () =>
+      import('./movielist/movielist.module').then((m) => m.MovielistPageModule),
+  },
+  {
+    path: 'moviedetails',
+    loadChildren: () =>
+      import('./moviedetails/moviedetails.module').then(
+        (m) => m.MoviedetailsPageModule
+      ),
+  },
+  {
+    path: 'moviedetails/:id',
+    loadChildren: () =>
+      import('./moviedetails/moviedetails.module').then(
+        (m) => m.MoviedetailsPageModule
+      ),
+  },
+  {
+    path: 'addmovie',
+    loadChildren: () =>
+      import('./addmovie/addmovie.module').then((m) => m.AddmoviePageModule),
+  },
+  {
+    path: 'register',
+    loadChildren: () =>
+      import('./register/register.module').then((m) => m.RegisterPageModule),
   },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
