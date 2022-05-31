@@ -6,7 +6,7 @@
 </ion-header>
 <ion-content>
     <img class="img" src="../../assets/img/loginn.png" alt="">
-    <form class="form" id="loginForm" [formGroup]="formValidation" (ngSubmit)="tryLogin(formValidation.value)">
+    <form class="form" id="loginForm" formGroup="formValidation" (ngSubmit)="tryLogin(formValidation.value)">
         <ion-item>
             <ion-label class="label-title">Please Insert Your corrects Informations:
             </ion-label>
